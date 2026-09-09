@@ -1,0 +1,6 @@
+{
+  "name": "Conectados · Ministério de Jovens",
+  "description": "App de gestão editorial e presencial do ministério de jovens: visão do sábado, chamada, financeiro, estudos, retiros e assistente criativo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

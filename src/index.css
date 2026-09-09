@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+:root {
+  --shell: #eae6de;
+  --paper: #f6f4ef;
+  --card: #fffdf9;
+  --ink: #16150f;
+  --mute: #5f5b50;
+  --faint: #7d7768;
+  --rule: #e2ddd2;
+  --accent: #b0451f;
+  --accentSoft: #f4e4dc;
+  --good: #2c6449;
+  --goodSoft: #e2eee7;
+  --warn: #8a5a08;
+  --warnSoft: #f6ead3;
+  --railBg: #16150f;
+  --railInk: #f6f4ef;
+  --railMute: rgba(246, 244, 239, 0.62);
+  --railHair: rgba(246, 244, 239, 0.14);
+}
+
+[data-theme="dark"], .dark {
+  --shell: #0c0c09;
+  --paper: #151510;
+  --card: #1c1b16;
+  --ink: #f4f1e8;
+  --mute: #b3ad9f;
+  --faint: #8e8878;
+  --rule: #2c2b23;
+  --accent: #e07a4e;
+  --accentSoft: #33241c;
+  --good: #7fc9a3;
+  --goodSoft: #1c2b24;
+  --warn: #e0b463;
+  --warnSoft: #302617;
+  --railBg: #0c0c09;
+  --railInk: #f4f1e8;
+  --railMute: rgba(244, 241, 232, 0.66);
+  --railHair: rgba(244, 241, 232, 0.16);
+}
+
+@theme {
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-sans: "Public Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--shell);
+  color: var(--ink);
+  font-family: "Public Sans", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.45s ease, color 0.45s ease;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* Animations */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes breathe {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes inkline {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-rise {
+  animation: rise 0.45s cubic-bezier(0.2, 0.9, 0.2, 1) both;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.4s ease both;
+}
+
+.animate-grow {
+  animation: grow 0.6s cubic-bezier(0.2, 0.9, 0.2, 1) both;
+  transform-origin: left;
+}
+
+.animate-breathe {
+  animation: breathe 2.6s ease-in-out infinite;
+}
+
+.animate-inkline {
+  animation: inkline 0.5s cubic-bezier(0.2, 0.9, 0.2, 1) both;
+  transform-origin: left;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--rule);
+  border-radius: 9px;
+}
